@@ -86,19 +86,19 @@ void deleteFirst(){
 }
 
 void deleteMiddle(int pos){
-    struct Node *temp;
-    struct Node *temp2;
-    temp = head;
+    struct Node *prev;
+    struct Node *curr;
+    curr = head;
     for(int i=0; i<pos-1; i++){
-        temp2 = temp;
-        temp = temp->next;
-        if (temp == nullptr) {
+        prev = curr;
+        curr = curr->next;
+        if (curr == nullptr) {
             cout << "Can't Delete" << endl;
             return;
         }
     }
-    temp2->next = temp->next;
-    free(temp);
+    prev->next = curr->next;
+    free(curr);
 }
 
 void deleteLast(){
@@ -147,6 +147,8 @@ int main(){
     printLinkedList();
     countLinkedList();
     insertMiddle(9,4);
+    printLinkedList();
+    deleteMiddle(4);
     printLinkedList();
     return 0;
 }

@@ -3,5 +3,4 @@ project(DataStructure)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DataStructure
-        LinkedList/LinkedList.cpp)
+add_executable(DataStructure "LinearLists/stacks/stack_LinkedList.cpp" )
